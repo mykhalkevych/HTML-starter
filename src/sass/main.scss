@@ -7,8 +7,31 @@
 	font-size: 18px;
 	box-sizing: border-box;
 	position: relative;
+	overflow: hidden;
 	*{
 		box-sizing: border-box;
+	}
+	.white-divider, .blue-divider {
+		width: 650px;
+    height: 550px;
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    opacity: 0;
+    transform: rotate(39deg);
+    transform-origin: top;
+    z-index: 10;
+    background: linear-gradient(#fff 45%, #2e3393 65%, #7e82cf 65%, #7e82cf 70%, #2e3393 70%, #2e3393 80%, #fff 80%, #fff 90%, #2e3393 90%);
+
+    animation-name: white-divider;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-delay: 8s;
+	}
+	.blue-divider {
+		background: linear-gradient(#fff 45%, #fff 65%, #7e82cf 65%, #7e82cf 70%, #fff 70%, #fff 80%, #fff 80%, #fff 90%, #fff 90%);
+		animation-name: blue-divider;
+		animation-delay: 16s;
 	}
 	.screen1 {
 		background: #2e3393;
@@ -24,51 +47,104 @@
 		img {
 			width: 200px;
 			margin-bottom: 50px;
+			opacity: 0;
+			animation-name: screen1-img;
+			animation-duration: 7s;
+			animation-iteration-count: infinite;
 		}
 		span {
 			display: block;
 			line-height: 1;
 			font-size: 23px;
+			opacity: 0;
+			animation-name: screen1-text;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+			animation-delay: 0.5s;
+			&:last-child{
+			animation-delay: 1s;
+			}
 		}
 		h3 {
 			font-size: 25px;
 			margin-top: 35px;
+			opacity: 0;
+			animation-name: screen1-text;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+			animation-delay: 0.75s;
 		}
 	}
 
 	.screen2{
+		display: none;
 		position: absolute;
 		z-index: 2;
 		height: 100%;
+		width: 100%;
+		background: #fff;
 		overflow: hidden;
 		border-bottom: 3px solid #2e3393;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			filter: blur(0);
+			animation-name: screen3-img;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+			animation-delay: 1s;
+		}
 	}
 
 	.screen3 {
+		display: none;
 		position: absolute;
 		z-index: 3;
 		width: 100%;
 		height: 100%;
 		top: 0;
 		left: 0;
+		background: #fff;
+		border-bottom: 3px solid #2e3393;
+		overflow: hidden;
+
 		.img {
 			position: absolute;
 			top: 0;
 			left: 0;
 			z-index: -1;
+			opacity: 0;
+			filter: blur(0);
+			animation-name: screen3-img;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+			animation-delay: 1s;
 		}
 		.logo{
 			float: right;
 			margin-right: 15px;
+			opacity: 0;
+			animation-name: screen3-logo;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+			animation-delay: 1s;
 		}
 		.button {
 			position: absolute;
 			width: fit-content;
 			bottom: 70px;
 			left: 50%;
-			transform: translateX(-50%);
-			padding: 10px 20px;
+			transform: translate(-50%, 100%);
+			padding: 8px 12px;
 			font-size: 21px;
+			opacity: 0;
+			animation-name: screen3-btn;
+			animation-duration: 8s;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+			animation-delay: 1s;
 
 			&:after {
 				content: '';
@@ -80,6 +156,10 @@
 				width: 100%;
 				height: 100%;
 				background: #2e3393;
+				animation-name: screen3-btn-pulse;
+				animation-duration: 0.4s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
 			}
 
 			span {
@@ -89,6 +169,7 @@
 		}
 	}
 	.screen4 {
+		display: none;
 		position: absolute;
 		z-index: 4;
 		width: 100%;
@@ -98,10 +179,23 @@
 		background: #2e3393;
 		color: #fff;
 		font-style: italic;
+		animation-name: screen4;
+		animation-duration: 1s;
+		animation-direction: alternate;
+		animation-iteration-count: infinite;
+		animation-delay: 10s;
+
 		h3 {
 			margin-bottom: 25px;
 			font-size: 21px;
 			padding: 0 15px;
+			opacity: 0;
+			transform: translateY(40px);
+			animation-name: screen4-h;
+			animation-duration: 8s;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+			animation-delay: 1s;
 		}
 		span{
 			position: relative;
@@ -111,7 +205,26 @@
 			margin-bottom: 30px;
 			font-size: 18px;
 			line-height: 1;
+			opacity: 0;
+			transform: translateX(100%);
 			padding-right: 12px;
+			animation-name: screen4-span;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-delay: 1s;
+			&:nth-child(3) {
+				animation-delay: 1.5s;
+			}
+			&:nth-child(4) {
+				animation-delay: 2s;
+			}
+			&:nth-child(5) {
+				animation-delay: 2.5s;
+			}
+			&:nth-child(6) {
+				animation-delay: 3s;
+			}
 
 			img {
 				position: absolute;
@@ -125,4 +238,253 @@
 	}
 
 
+}
+
+@keyframes screen1-img {
+	0% {
+		opacity: 0;
+		transform: scale(1.3);
+	}
+	20% {
+		opacity: 0;
+		transform: scale(1.3);
+	}
+	30% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	70% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	80% {
+		opacity: 0;
+		transform: scale(1.3);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.3);
+	}
+}
+@keyframes screen1-text {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+
+	}
+	20% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	30% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	70% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	80% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(50px);
+
+	}
+}
+@keyframes screen3-logo {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes screen3-btn {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, 100%);
+
+	}
+	20% {
+		opacity: 0;
+		transform: translate(-50%, 100%);
+	}
+	30% {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+	70% {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+	80% {
+		opacity: 0;
+		transform: translate(-50%, 100%);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50%, 100%);
+
+	}
+}
+
+@keyframes screen3-btn-pulse {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1.2);
+
+	}
+}
+
+@keyframes screen3-img {
+	0% {
+		opacity: 0;
+		filter: blur(10px);
+		transform: scale(1.05);
+	}
+	20% {
+		opacity: 0;
+		filter: blur(10px);
+		transform: scale(1.05);
+	}
+	30% {
+		opacity: 1;
+		filter: blur(0px);
+		transform: scale(1);
+
+		top: 0;
+	}
+	70% {
+		opacity: 1;
+		top: 0;
+		filter: blur(0px);
+		transform: scale(1);
+
+	}
+	80% {
+		opacity: 0;
+		top: 100%;
+		filter: blur(10px);
+		transform: scale(1.05);
+	}
+	100% {
+		opacity: 0;
+		top: 100%;
+		filter: blur(10px);
+		transform: scale(1.05);
+	}
+}
+
+@keyframes screen4 {
+	0% {
+		opacity: 0;
+
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes screen4-h {
+	0% {
+		opacity: 0;
+		transform: translateY(40px);
+
+	}
+	20% {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	30% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	70% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	80% {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(40px);
+
+	}
+}
+
+@keyframes screen4-span {
+
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+
+	}
+	20% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	30% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	70% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	80% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(100%);
+
+	}
+}
+
+@keyframes white-divider {
+
+	0% {
+		height: 0;
+		opacity: 0;
+	}
+	5% {
+		opacity: 1
+	}
+	100% {
+		height: 1200px;
+	}
+}
+@keyframes blue-divider {
+
+	0% {
+		height: 0;
+		opacity: 0;
+	}
+	5% {
+		opacity: 1
+	}
+	100% {
+		height: 1200px;
+	}
 }
