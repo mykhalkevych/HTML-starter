@@ -13,7 +13,7 @@
 	}
 	.white-divider, .blue-divider {
 		width: 650px;
-    height: 550px;
+    height: 0;
     position: absolute;
     left: 20%;
     top: 0%;
@@ -23,10 +23,9 @@
     z-index: 10;
     background: linear-gradient(#fff 45%, #2e3393 65%, #7e82cf 65%, #7e82cf 70%, #2e3393 70%, #2e3393 80%, #fff 80%, #fff 90%, #2e3393 90%);
 
-    animation-name: white-divider;
-		animation-duration: 1s;
-		animation-iteration-count: infinite;
-		animation-delay: 8s;
+  //   animation-name: white-divider;
+		// animation-duration: 10s;
+		// animation-iteration-count: infinite;
 	}
 	.blue-divider {
 		background: linear-gradient(#fff 45%, #fff 65%, #7e82cf 65%, #7e82cf 70%, #fff 70%, #fff 80%, #fff 80%, #fff 90%, #fff 90%);
@@ -49,7 +48,7 @@
 			margin-bottom: 50px;
 			opacity: 0;
 			animation-name: screen1-img;
-			animation-duration: 7s;
+			animation-duration: 5s;
 			animation-iteration-count: infinite;
 		}
 		span {
@@ -58,7 +57,7 @@
 			font-size: 23px;
 			opacity: 0;
 			animation-name: screen1-text;
-			animation-duration: 8s;
+			animation-duration: 5s;
 			animation-iteration-count: infinite;
 			animation-delay: 0.5s;
 			&:last-child{
@@ -70,21 +69,24 @@
 			margin-top: 35px;
 			opacity: 0;
 			animation-name: screen1-text;
-			animation-duration: 8s;
+			animation-duration: 5s;
 			animation-iteration-count: infinite;
 			animation-delay: 0.75s;
 		}
 	}
 
 	.screen2{
-		display: none;
 		position: absolute;
 		z-index: 2;
 		height: 100%;
 		width: 100%;
 		background: #fff;
 		overflow: hidden;
+		opacity: 0;
 		border-bottom: 3px solid #2e3393;
+		animation-name: screen;
+		animation-duration: 20s;
+		animation-iteration-count: infinite;
 		img {
 			position: absolute;
 			top: 0;
@@ -92,14 +94,12 @@
 			opacity: 0;
 			filter: blur(0);
 			animation-name: screen3-img;
-			animation-duration: 8s;
+			animation-duration: 5s;
 			animation-iteration-count: infinite;
-			animation-delay: 1s;
 		}
 	}
 
 	.screen3 {
-		display: none;
 		position: absolute;
 		z-index: 3;
 		width: 100%;
@@ -107,8 +107,14 @@
 		top: 0;
 		left: 0;
 		background: #fff;
+		opacity: 0;
 		border-bottom: 3px solid #2e3393;
 		overflow: hidden;
+		animation-name: screen;
+		animation-duration: 20s;
+		animation-iteration-count: infinite;
+		animation-delay: 5s;
+
 
 		.img {
 			position: absolute;
@@ -118,18 +124,16 @@
 			opacity: 0;
 			filter: blur(0);
 			animation-name: screen3-img;
-			animation-duration: 8s;
+			animation-duration: 5s;
 			animation-iteration-count: infinite;
-			animation-delay: 1s;
 		}
 		.logo{
 			float: right;
 			margin-right: 15px;
 			opacity: 0;
 			animation-name: screen3-logo;
-			animation-duration: 8s;
+			animation-duration: 5s;
 			animation-iteration-count: infinite;
-			animation-delay: 1s;
 		}
 		.button {
 			position: absolute;
@@ -141,10 +145,9 @@
 			font-size: 21px;
 			opacity: 0;
 			animation-name: screen3-btn;
-			animation-duration: 8s;
+			animation-duration: 5s;
 			animation-direction: alternate;
 			animation-iteration-count: infinite;
-			animation-delay: 1s;
 
 			&:after {
 				content: '';
@@ -169,7 +172,6 @@
 		}
 	}
 	.screen4 {
-		display: none;
 		position: absolute;
 		z-index: 4;
 		width: 100%;
@@ -179,9 +181,9 @@
 		background: #2e3393;
 		color: #fff;
 		font-style: italic;
-		animation-name: screen4;
-		animation-duration: 1s;
-		animation-direction: alternate;
+		opacity: 0;
+		animation-name: screen;
+		animation-duration: 20s;
 		animation-iteration-count: infinite;
 		animation-delay: 10s;
 
@@ -192,10 +194,10 @@
 			opacity: 0;
 			transform: translateY(40px);
 			animation-name: screen4-h;
-			animation-duration: 8s;
+			animation-duration: 10s;
 			animation-direction: alternate;
 			animation-iteration-count: infinite;
-			animation-delay: 1s;
+			animation-delay: 2s;
 		}
 		span{
 			position: relative;
@@ -209,21 +211,21 @@
 			transform: translateX(100%);
 			padding-right: 12px;
 			animation-name: screen4-span;
-			animation-duration: 8s;
+			animation-duration: 10s;
 			animation-iteration-count: infinite;
 			animation-direction: alternate;
-			animation-delay: 1s;
+			animation-delay: 2s;
 			&:nth-child(3) {
-				animation-delay: 1.5s;
+				animation-delay: 2.2s;
 			}
 			&:nth-child(4) {
-				animation-delay: 2s;
+				animation-delay: 2.4s;
 			}
 			&:nth-child(5) {
-				animation-delay: 2.5s;
+				animation-delay: 2.6s;
 			}
 			&:nth-child(6) {
-				animation-delay: 3s;
+				animation-delay: 2.8s;
 			}
 
 			img {
@@ -393,16 +395,6 @@
 	}
 }
 
-@keyframes screen4 {
-	0% {
-		opacity: 0;
-
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 @keyframes screen4-h {
 	0% {
 		opacity: 0;
@@ -466,13 +458,30 @@
 
 	0% {
 		height: 0;
+	}
+	24% {
+		height: 0
+	}
+	26% {
+		height: 1200px;
+	}
+	28% {
+		height: 1200px;
+	}
+	49%{
+		height: 1200px;
+	}
+	51% {
+		opacity: 0
+	}
+	74% {
 		opacity: 0;
 	}
-	5% {
-		opacity: 1
+	76% {
+		opacity: 1;
 	}
 	100% {
-		height: 1200px;
+		opacity: 1;
 	}
 }
 @keyframes blue-divider {
@@ -486,5 +495,27 @@
 	}
 	100% {
 		height: 1200px;
+	}
+}
+
+@keyframes screen {
+
+	0% {
+		opacity: 0;
+	}
+	24% {
+		opacity: 0
+	}
+	26% {
+		opacity: 1
+	}
+	49%{
+		opacity: 1
+	}
+	51% {
+		opacity: 0
+	}
+	100% {
+		opacity: 0;
 	}
 }
