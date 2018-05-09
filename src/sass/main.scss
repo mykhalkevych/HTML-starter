@@ -1,4 +1,67 @@
 body{
 	color: #433;
-	font-size: 25px
+	font-size: 25px;
+	padding: 40px;
+}
+
+.polygon {
+	position: absolute;
+	width: 134px;
+	display: inline-block;
+	height: 150px;
+	& > span {
+		display: inline-block;
+		width: 100%;
+		height: 74px;
+		position: absolute;
+		& span {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 2px;
+			height: 100%;
+			background: #000;
+
+		}
+		& span:nth-child(2) {
+			left: auto;
+			right: 0;
+		}
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			left: -7px;
+			bottom: -9px;
+			width: 17px;
+			height: 17px;
+			border-radius: 50%;
+			background: #000;
+		}
+		&:after {
+			left: auto;
+			right: -7px;
+			top: -9px;
+			bottom: auto;
+		}
+		&:nth-child(1){
+			transform: rotate(60deg);
+			height: 74px;
+			
+		}
+		&:nth-child(2){
+			transform: rotate(-60deg);
+			height: 74px;
+			
+		}
+	}
+
+	@for $i from 1 through 17 {
+		&.c#{$i} { left:  66px* $i; }
+	}
+
+	@for $i from 1 through 21 {
+		&.r#{$i}  { top:  38px* $i; }
+	}
+	
 }
