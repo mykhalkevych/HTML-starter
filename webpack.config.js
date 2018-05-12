@@ -16,7 +16,10 @@ module.exports = {
 			  	fallback: 'style-loader',
           use: ['css-loader','sass-loader'],
 			  })
-			}
+			},
+			{ test: /\.(gif|png|jpe?g)$/i,
+				loader: 'file-loader?name=[name].[ext]&outputPath=./images/&publicPath=../images/'
+			},
 		]
 	},
 	devServer: {

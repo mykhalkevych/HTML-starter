@@ -2,9 +2,11 @@ body{
 	color: #433;
 	font-size: 25px;
 	padding: 40px;
-	background: #433;
+	background:#1e1b1b;
 }
-
+.bee-mesh {
+	// background: url(../images/bg.png);
+}
 .polygon {
 	position: absolute;
 	width: 134px;
@@ -21,10 +23,11 @@ body{
 			bottom: 0;
 			width: 2px;
 			height: 100%;
-			background: transparent;
+			background: #443a24;
+			background-image: linear-gradient(#443a24, #333, rgba(78, 67, 43, 0.15), #443a24);
 			animation-name: line;
 			animation-duration: 4s;
-			animation-direction: alternate;
+			animation-direction: alternate-reverse;
 			animation-iteration-count: infinite;
 		}
 		& span:nth-child(2) {
@@ -42,11 +45,11 @@ body{
 			width: 17px;
 			height: 17px;
 			border-radius: 50%;
-			background: transparent;
+			background: #443a24;
 			animation-name: circle;
 			animation-duration: 2s;
 			animation-iteration-count: infinite;
-			animation-direction: alternate;
+			animation-direction: alternate-reverse;
 			transition: 1s;
 		}
 		&:after {
@@ -70,8 +73,11 @@ body{
 
 	@for $i from 1 through 17 {
 		&.c#{$i} { left:  66px* $i; }
-		&.c#{$i} > span:before, &.c#{$i} > span:after, &.c#{$i} > span span {
+		&.c#{$i} > span:before,  &.c#{$i} > span span {
 			animation-delay: 130ms * $i;
+		}
+		&.c#{$i} > span:after {
+			animation-delay: 130ms * $i + 500ms;			
 		}
 		&.c#{$i} > span span {
 			animation-delay: 500ms * $i;
@@ -96,6 +102,7 @@ body{
 		height: 8px;
 		left: -3px;
 		bottom: -4px;
+		opacity: 0.2;
 
 	}
 	100% {
@@ -103,6 +110,7 @@ body{
 		height: 17px;
 		left: -7px;
 		bottom: -9px;
+		opacity: 1;
 	}
 }
 @keyframes circle2 {
@@ -111,20 +119,24 @@ body{
 		height: 8px;
 		right: -3px;
 		top: -4px;
+		opacity: 0.2;		
 	}
 	100% {
 		width: 17px;
 		height: 17px;
 		right: -7px;
 		top: -9px;
+		opacity: 1;
 	}
 }
 
 @keyframes line {
 	0% {
 		height: 0;
+		opacity: 0.2;		
 	}
 	100% {
 		height: 100%;
+		opacity: 1;		
 	}
 }
